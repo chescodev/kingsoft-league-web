@@ -1,0 +1,58 @@
+---
+import Facebook from '@/icons/Facebook.astro'
+import Instagram from '@/icons/Instagram.astro'
+import Whatsapp from '@/icons/Whatsapp.astro'
+import X from '@/icons/X.astro'
+---
+
+<footer
+  class="mt-20 w-full border-accent border-t-2 flex flex-col md:flex-row justify-center items-center md:justify-between pt-6 pb-20 gap-y-10"
+>
+  <span class="text-primary text-center">
+    © 2024 Kingsoft League <span aria-hidden class="hidden md:inline">|</span
+    ><br aria-hidden class="block md:hidden" /> Todos los derechos reservados.
+  </span>
+
+  <ul class="flex flex-row gap-x-6 items-center">
+    <li>
+      <a
+        target="_blank"
+        rel="noopener"
+        href=""
+        class="hover:scale-125 hover:opacity-70 inline-block"
+      >
+        <Whatsapp class="text-primary" />
+      </a>
+    </li>
+    <li>
+      <a
+        target="_blank"
+        rel="noopener"
+        href=""
+        class="hover:scale-125 hover:opacity-70 inline-block"
+      >
+        <Instagram class="text-primary" />
+      </a>
+    </li>
+    <li>
+      <a
+        target="_blank"
+        rel="noopener"
+        href=""
+        class="hover:scale-125 hover:opacity-70 inline-block"
+      >
+        <Facebook class="text-primary" />
+      </a>
+    </li>
+    <li>
+      <a
+        target="_blank"
+        rel="noopener"
+        href=""
+        class="hover:scale-125 hover:opacity-70 inline-block"
+      >
+        <X class="text-primary" />
+      </a>
+    </li>
+  </ul>
+</footer>
