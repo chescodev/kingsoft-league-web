@@ -1,0 +1,65 @@
+---
+import Action from "./Action.astro";
+
+
+---
+<Action 
+    class="w-max text-base"
+    as="button"
+    id="add-to-calendar"
+    aria-label="agregar al calendario, se abrirá en una ventana flotante"
+>
+    Agregar al calendario
+</Action>
+
+<script is:inline>
+    document.addEventListener("astro:page-load", () => {
+        const config = {
+            name: ":robot: Kingsoft League - Competencia de robots",
+            description: 
+                "¡Inicia la primera competencia de Robo-batallas en Huánuco!<br><br>Ven a Senati Huánuco y no te lo pierdas",
+            startDate: "2024-05-04",
+            endDate: "2024-05-04",
+            startTime: "10:00",
+            endTime: "12:00",
+            options: ["Google", "Apple", "Microsoft365", "MicrosoftTeams"],
+            timeZone: "America/Lima",
+            trigger: "click",
+            isCalFileName: "Reminder-Event",
+        }
+
+        let status
+
+        function loadStyle(src) {
+            return new Promise((resolve, reject) => {
+                const link = document.createElement("link")
+                link.href = src
+                link.rel = "stylesheet"
+
+                link.onload = () => resolve(link)
+                link.onerror = () => reject(new Error(`Style load error for ${src}`))
+
+                document.head.append(link)
+            })
+        }
+
+        const button = document.querySelector("#add-to-calendar")
+
+        const handleClick = async () => {
+            if (status === "loading") return
+
+            if (!status) {
+                const text = button.innerHTML
+                button.innerHTML = "Cargando..."
+                status = "loading"
+                await Promise.all([import("/js/add-to-calendar.js"), loadStyle("/css/add-to-calendar.css")])
+                status = "loaded"
+                button.innerHTML = text
+            }
+
+            window.atcb_action(coonfig, button)
+        }
+
+        button?.addEventListener("click", handleClick)
+    })
+</script>
