@@ -5,9 +5,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'primary': '#ddd',
-				'secondary': '#333',
-				'accent': '#fbbf24',
+				primary: "var(--color-primary)",
+				secondary: "var(--color-secondary)",
+				accent: "var(--color-accent)",
 			}
 		},
 	},

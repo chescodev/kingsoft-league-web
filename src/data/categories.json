@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "category_id": 1,
+      "category_name": "Amateur",
+      "category_description": "Esta categoría está diseñada para participantes que son nuevos en la construcción y competición de robots de batalla. Los concursantes en esta categoría pueden tener poca experiencia previa en la construcción de robots o en eventos de robótica. La categoría amateur puede incluir restricciones en cuanto al tamaño, peso o armamento de los robots para nivelar el campo de juego y hacer que la competición sea más accesible para los principiantes."
+    },
+    {
+      "category_id": 2,
+      "category_name": "Beginner",
+      "category_description": "Similar a la categoría amateur, la categoría de principiantes está dirigida a competidores con poca experiencia en la construcción y competición de robots de batalla. Los concursantes en esta categoría pueden estar dando sus primeros pasos en el mundo de la robótica y pueden beneficiarse de reglas y restricciones que los ayuden a aprender y mejorar sus habilidades."
+    },
+    {
+      "category_id": 3,
+      "category_name": "Novato",
+      "category_description": "La categoría de novatos está diseñada para participantes que tienen poca experiencia en la competición de robots de batalla. Los concursantes en esta categoría pueden ser nuevos en la construcción de robots o en eventos de robótica, y pueden estar buscando aprender y mejorar sus habilidades a través de la competición. Las reglas de esta categoría pueden estar diseñadas para nivelar el campo de juego y hacer que la competición sea más accesible para los principiantes."
+    },
+    {
+      "category_id": 4,
+      "category_name": "Junior",
+      "category_description": "La categoría junior puede estar destinada a competidores más jóvenes, como estudiantes de secundaria o de edades similares. Esta categoría puede ofrecer una introducción a la competición de robots de batalla para los jóvenes y puede incluir reglas y restricciones diseñadas para adaptarse a su nivel de habilidad y experiencia."
+    }
+  ], 
+  "competitions": [
+    {
+      "competition_name": "BattleBots Championship",
+      "competition_description": "The ultimate battle between robots!",
+      "rules": "Robots must fit within specified size and weight limits. No projectile weapons allowed.",
+      "category_id": 1,
+      "price": 1000.00,
+      "start_date": "2024-06-01",
+      "end_date": "2024-06-05",
+      "competition_date": "2024-06-03",
+      "prize": "Trophy and cash prize"
+    },
+    {
+      "competition_name": "Robo Wars",
+      "competition_description": "A fierce competition of robot combat!",
+      "rules": "Robots must adhere to weight restrictions. No flying robots allowed.",
+      "category_id": 2,
+      "price": 750.00,
+      "start_date": "2024-07-10",
+      "end_date": "2024-07-15",
+      "competition_date": "2024-07-13",
+      "prize": "Medal and sponsorship opportunity"
+    },
+    {
+      "competition_name": "Tech Titans Clash",
+      "competition_description": "Battle of the brightest minds in robotics!",
+      "rules": "Robots must be autonomous and capable of completing specified tasks.",
+      "category_id": 3,
+      "price": 500.00,
+      "start_date": "2024-08-20",
+      "end_date": "2024-08-25",
+      "competition_date": "2024-08-23",
+      "prize": "Internship opportunity and publication"
+    }
+  ]
+} 
+

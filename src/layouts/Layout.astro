@@ -25,7 +25,8 @@ const { title } = Astro.props
   </head>
   <body class="">
     <Noise />
-    <div class="max-w-6xl px-2 lg:px-10 pt-40 mx-auto">
+    <Header />
+    <div class="max-w-6xl px-2 lg:px-10 pt-40 mx-auto text-primary">
       <slot />
     </div>
   </body>
@@ -36,11 +37,14 @@ const { title } = Astro.props
   :root {
     --color-primary: #ddd;
     --color-secondary: #333;
+    --color-accent: #fbbf24;
+    
+    --background-color: #040220;
   }
 
   html {
     font-family: 'Jost Variable', system-ui, sans-serif;
-    background: #040220;
-    color: #ddd;  
+    background: var(--background-color);
+    scrollbar-gutter: stable; 
   }
 </style>
