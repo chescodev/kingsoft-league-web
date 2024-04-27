@@ -1,12 +1,14 @@
 ---
 import CategoriesList from '@/components/CategoriesList.astro';
+import CompetitionList from '@/components/CompetitionList.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Competencia - Kingsoft League">
-    <h1 class="text-xl uppercase text-primary px-2 py-1 mb-9 font-medium">
+    <h1 class="uppercase px-2 py-1 text-3xl font-bold mb-8">
         Conoce nuestras competencias
     </h1>
-
+    
+    <CompetitionList />
     <CategoriesList />
 </Layout>
