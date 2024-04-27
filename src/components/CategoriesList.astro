@@ -1,18 +1,19 @@
 ---
 import { type Categories } from '@/lib/categories.ts'
 
-const res = await fetch("http://localhost:4321/api/categories.json")
-const { categories } = (await res.json()) as Categories
-
-console.log(categories)
-
+const res = await fetch('http://localhost:4321/api/categories.json')
+const categories = (await res.json()) as Categories
 ---
+
 <section>
+  
   <ul>
     {
-      categories.map(category => (
-        <h2 class="text-4xl mb-5 ">Categoria {category.category_name}</h2>
-        <p class="mb-5">{category.category_description}</p>
+      categories.rows.map(category => (
+        <>
+          <h2 class="text-4xl mb-5">Categoria {category[1]}</h2>
+          <p class="mb-5">{category[2]}</p>
+        </>
       ))
     }
   </ul>
