@@ -1,5 +1,5 @@
 ---
-import { type Categories } from '@/lib/categories.ts'
+import { type Categories } from '@/types/categories'
 
 const res = await fetch('http://localhost:4321/api/categories.json')
 const categories = (await res.json()) as Categories

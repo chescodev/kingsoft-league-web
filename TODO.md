@@ -7,3 +7,6 @@
     --> Google [✔️]
     --> Facebook []
     --> Apple []
+- Sponsors [✔️]
+- Terminar con las inscripciones
+- Subir relgas
