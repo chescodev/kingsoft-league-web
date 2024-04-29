@@ -18,7 +18,7 @@ const pages = [
     active: normalizedPathName.startsWith('/robots'),
   },
   { name: 'Competencia', href: '/competition' },
-  { name: 'Inscribete', href: '/inscripciones' },
+  { name: 'Inscribete', href: '/registry' },
 ].map(page => ({
   ...page,
   active: page.active ?? normalizedPathName === page.href,
