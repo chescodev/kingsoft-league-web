@@ -31,5 +31,9 @@ import Action from '../Action.astro'
   const { signIn } = await import('auth-astro/client')
   const $login = $('#login')
 
-  $login.onclick = () => signIn('google')
+  $login.onclick = () => {
+    signIn('google')
+    $login.setAttribute('aria-disabled', 'true')
+    $login.querySelector("span").innerText = 'Iniciando sesión...'
+  }
 </script>
