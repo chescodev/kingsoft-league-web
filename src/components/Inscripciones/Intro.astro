@@ -1,0 +1,37 @@
+---
+import { getSession } from 'auth-astro/server'
+
+import Typography from '../Typography.astro'
+import Action from '../Action.astro'
+---
+
+<section class="flex flex-col items-center justify-center">
+  <div>
+    <Typography
+      class="mb-10 -skew-y-6 text-wrap text-center"
+      as="h1"
+      variant="h2"
+      color="white"
+    >
+      ¡Inscríbete!
+    </Typography>
+
+    <Action
+      id="login"
+      class="w-full text-base"
+      as="button"
+      aria-label="Cerrar sesión de usuario"
+    >
+      ¡Inicia sesión para participar!
+    </Action>
+  </div>
+</section>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+
+  const { signIn } = await import('auth-astro/client')
+  const $login = $('#login')
+
+  $login.onclick = () => signIn('google')
+</script>

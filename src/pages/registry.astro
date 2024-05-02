@@ -1,7 +1,10 @@
 ---
+import { getSession } from 'auth-astro/server' 
+
+import Intro from '@/components/Inscripciones/Intro.astro'
+import User from '@/components/Inscripciones/User.astro'
 import Layout from '@/layouts/Layout.astro'
 
-import { getSession } from 'auth-astro/server' 
 
 const session = await getSession(Astro.request)
 console.log(session)
@@ -9,16 +12,7 @@ console.log(session)
 
 <Layout title='Inscripciones'>
     <main class="flex flex-col items-center justify-center">
-        <div>Inscripciones</div>
-        {
-            session ? (
-                <div>
-                    <p>Hola, {session.user?.name}!</p>
-                    <button id="logout">Cerrar Sesión</button>
-                </div>
-            )
-            : <button id="login">Iniciar Sesión</button>
-        } 
+        {session === null ? <Intro /> : <User />}
     </main>
 </Layout>
 

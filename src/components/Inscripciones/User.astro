@@ -1,0 +1,26 @@
+---
+import Action from '../Action.astro'
+import Typography from '../Typography.astro'
+---
+
+<section class="flex flex-col items-center justify-center">
+  <Typography class="mb-10" as="h1" variant="h2" color="white"> ¡Inscríbete! </Typography>
+
+  <Action
+    id="logout"
+    class="w-full text-base"
+    as="button"
+    aria-label="Cerrar sesión de usuario"
+  >
+    Cerrar Sesión
+  </Action>
+</section>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+
+  const { signOut } = await import('auth-astro/client')
+  const $logout = $('#logout')
+
+  $logout.onclick = () => signOut()
+</script>
