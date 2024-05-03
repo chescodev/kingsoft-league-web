@@ -1,18 +1,45 @@
 ---
-import Typography from '../Typography.astro'
-import Action from '../Action.astro'
+import Typography from '@/components/Typography.astro'
+import Action from '@/components/Action.astro'
+
+import GoogleIcon from '@/icons/Google.astro'
+import FacebookIcon from '@/icons/FacebookIcon.astro'
 ---
 
 <section class="flex flex-col items-center justify-center">
   <div>
     <Typography
-      class="mb-10 -skew-y-6 text-wrap text-center"
+      class="mb-4 -skew-y-6 text-wrap text-center"
       as="h1"
       variant="h2"
       color="white"
     >
       ¡Inscríbete!
     </Typography>
+
+    <form action="" class="max-w-sm mx-auto">
+      <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium">Correo</label>
+        <input
+          type="email"
+          value=""
+          class="bg-gray-50 border text-black border-gray-300 text-sm rounded-lg block w-full p-2.5"
+          placeholder="name@gmail.com"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label for="password" class="block mb-2 text-lg font-medium"
+          >Contraseña</label
+        >
+        <input
+          type="password"
+          id="password"
+          class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"
+          required
+        />
+      </div>
+    </form>
 
     <Action
       id="login"
@@ -23,17 +50,39 @@ import Action from '../Action.astro'
       ¡Inicia sesión para participar!
     </Action>
   </div>
+
+  <div class="mt-2 w-full flex items-center justify-center gap-2 text-white">
+    <hr class="block w-full h-[1px] border-0 bg-white" />
+    <span class="text-nowrap">O inicia sesión con</span>
+    <hr class="block w-full h-[1px] border-0 bg-white" />
+  </div>
+
+  <div class="grid grid-cols-2 gap-4 mt-2">
+    <button
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-secondary hover:bg-primary h-10 px-4 py-2"
+      id="google"
+    >
+      <GoogleIcon />
+      Google
+    </button>
+    <button
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-secondary hover:bg-primary h-10 px-4 py-2"
+    >
+      <FacebookIcon />
+      Facebook
+    </button>
+  </div>
 </section>
 
 <script>
   import { $ } from '@/lib/dom-selector'
 
   const { signIn } = await import('auth-astro/client')
-  const $login = $('#login')
+  const $login = $('#google')
 
   $login.onclick = () => {
     signIn('google')
     $login.setAttribute('aria-disabled', 'true')
-    $login.querySelector("span").innerText = 'Iniciando sesión...'
+    $login.querySelector('span').innerText = 'Iniciando sesión...'
   }
 </script>

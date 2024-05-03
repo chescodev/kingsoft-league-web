@@ -1,29 +1,16 @@
 ---
-import { getSession } from 'auth-astro/server' 
+import { getSession } from 'auth-astro/server'
 
 import Intro from '@/components/Inscripciones/Intro.astro'
 import User from '@/components/Inscripciones/User.astro'
 import Layout from '@/layouts/Layout.astro'
 
-
 const session = await getSession(Astro.request)
 console.log(session)
 ---
 
-<Layout title='Inscripciones'>
-    <main class="flex flex-col items-center justify-center">
-        {session === null ? <Intro /> : <User />}
-    </main>
+<Layout title="Inscripciones">
+  <main class="flex flex-col items-center justify-center">
+    {session === null ? <Intro /> : <User />}
+  </main>
 </Layout>
-
-<script>
-    import { $ } from '@/lib/dom-selector'
-    const { signIn, signOut } = await import('auth-astro/client')
-    
-    const $login = $('#login')
-    const $logout = $('#logout')
-
-    if ($login) $login.onclick = () => signIn("google")
-    if ($logout) $logout.onclick = () => signOut()
-
-</script>
